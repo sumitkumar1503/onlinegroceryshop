@@ -1,0 +1,45 @@
+{% include "bazaar/navbar.html" %}
+<br><br><br>
+
+{% load static %}
+	<!-- main content -->
+	<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="Shop online for fresh vegetables, fruits and grocery and get your order delivered at your doorstep. Enjoy instant delivery with Hello Kirana, This is a complete solution of an online grocery and ecommerce website." name="description">
+  <link rel="icon" href="{% static "images/logo.png" %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ <style>
+  a:link {
+      text-decoration: none;
+    }
+ </style>
+
+</head>
+
+<body>
+  {% include "bazaar/loader_whatsapp.html" %}
+<center><br>
+    <h4 style="color: blue;">Order Placed Successfully !!!</h4><br>
+    <p>{{product}} : {{product.quantity }} -  {{product.price}}</p><br>
+    <h5 style="color: tomato;">You will get delivery within 12 hour |</h5>
+    <h5 style="color: tomato;">Ready with cash|</h5>
+    <br><br>
+    <button><a href="/">Place Another Order</a></button>
+</center>
+
+</body>
+
+</html><br><br><br><br><br><br><br><br><br><br><br>
+	<!-- end main content -->
+  {% include "bazaar/footer.html" %}

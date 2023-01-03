@@ -1,0 +1,78 @@
+{% extends 'bazaar/adminbase.html' %}
+{% block content %}
+{% load static %}
+	<!-- main content -->
+	<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ <style>
+table
+{ 
+margin-left: auto;
+margin-right: auto;
+}
+a:link {
+      text-decoration: none;
+    }
+ </style>
+
+</head>
+
+<body>
+ <br><br><br><br>
+
+  {% if products %}
+  <h4 style="text-align:center;color: red;"><font face = "Comic sans MS" size ="7">Products</font></h4><br>
+  <table class="table center" >
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">English Name</th>
+       
+        <th scope="col">Hindi Name</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in products %}
+      <tr>
+        <td> {{m.englishname}}</td>
+       
+        <td>{{m.hindiname}}</td>
+        <td> <img src="{% static m.photo.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+        <td>{{m.categoryname}}</td>
+        <td>{{m.price}}</td>
+        <td>{{m.quantity}}</td>
+        <td><a class="btn btn-primary btn-xs" href="{% url 'update-product' m.id  %}"><i class="fas fa-edit" style="font-size:15px;color:rgb(252, 252, 252)"></i></a></td>
+        
+        <td><a style="color:blue; text-decoration:none;font-size:25px;"href="{% url 'delete-product' m.id  %}"><i class="fas fa-trash-alt" style="font-size:30px;color:rgb(0, 0, 255)"></i></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+ {% else %}
+ <br><br><br><br><br><br>
+ <H3 style="text-align: center;color: rgb(0, 0, 255);">NO product REGISTERED YET</H3>
+ {% endif %}
+
+</body>
+
+</html><br><br><br><br><br><br><br><br><br>
+	<!-- end main content -->
+{% endblock content %}

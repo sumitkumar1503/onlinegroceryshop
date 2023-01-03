@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <title>
+
+  </title>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta content="Shop online for fresh vegetables, fruits and grocery and get your order delivered at your doorstep. Enjoy instant delivery with Hello Kirana, This is a complete solution of an online grocery and ecommerce website." name="description">
+  <link rel="icon" href="{% static "images/logo.png" %}" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    .jumotron{
+      height: fit-content;
+      border-radius:.0rem;
+    }
+    @media screen and (min-width: 601px) {
+  .xyz {
+    font-size: 20px;
+  }
+  .cor{
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .xyz {
+    font-size: 13px;
+  }
+  .cor{
+    height: 200px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+
+  {% include "bazaar/navbar.html" %}
+  <br><br>
+  <div class="jumbotron" style="background-color: #0274be;  padding-top: 27px;padding-bottom: 2px;border-radius:.0rem; margin-bottom: 0px;">
+    <h5 style="color: white;" class="text-center xyz">Need Grocery Item ? Order Now !!!
+    </h5>
+  </div>
+
+
+
+    {% include "bazaar/products_by_categories.html" %}
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  {% include "bazaar/footer.html" %}
+
+
+
+</body>
+
+</html>

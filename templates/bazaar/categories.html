@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+<meta content="Shop online for fresh vegetables, fruits and grocery and get your order delivered at your doorstep. Enjoy instant delivery with Hello Kirana, This is a complete solution of an online grocery and ecommerce website." name="description">
+  <link rel="icon" href="{% static "images/logo.png" %}" type="image/x-icon">
+
+  <style>
+    @media (max-width: 576px) {
+      .xs {
+        color: red;
+        font-weight: bold;
+      }
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) and (max-width:768px) {
+      .sm {
+        color: red;
+        font-weight: bold;
+      }
+
+    }
+
+    /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+    @media (min-width: 768px) and (max-width:992px) {
+      .md {
+        color: red;
+        font-weight: bold;
+      }
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width:1200px) {
+      .lg {
+        color: red;
+        font-weight: bold;
+      }
+    }
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+      .xl {
+        color: red;
+        font-weight: bold;
+      }
+    }
+
+
+    @media screen and (max-width: 600px) {
+      .card {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading mb-2 text-center">
+          <h3 style="font-family: 'Nunito', sans-serif;">Products By Category</h3> <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+        {% for c in categories %}
+
+      <div class="col-xl col-sm-3">
+        <a style="text-decoration: none;color: black;" href="{% url 'customer-view-product-by-category' c.id  %}">
+        <div class="card">
+          <img src="{% static c.photo.url %}" height="200px" width="200px" class="card-img-top"
+            alt="...">
+
+
+              <div class="card-body">
+                <h6 class="card-title text-center"> {{ c.englishname}} </h6>
+                <h6 class="card-title text-center"> {{ c.hindiname}} </h6>
+
+              </div>
+
+
+        </div>    </a>
+      </div>
+
+<!-- card1 end -->
+{% if forloop.counter|divisibleby:"4" %}
+    </div><br><br>
+    <div class="row">
+
+{% endif %}
+  {% endfor %}
+</div>
+    <br>
+
+
+  </div>
+  <!-- /.container -->
+</body>
+
+</html>

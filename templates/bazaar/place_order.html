@@ -1,0 +1,105 @@
+{% include "bazaar/navbar.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="Shop online for fresh vegetables, fruits and grocery and get your order delivered at your doorstep. Enjoy instant delivery with Hello Kirana, This is a complete solution of an online grocery and ecommerce website." name="description">
+  <link rel="icon" href="{% static "images/logo.png" %}" type="image/x-icon">
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 60%;
+      height:50px;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+    a:link {
+      text-decoration: none;
+    }
+  </style>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+{% include "bazaar/loader_whatsapp.html" %}
+<!--
+written By : sumit kumar
+facebook : fb.com/sumit.luv
+-->
+<br><br><br><br>
+<!------ signup page for student by admin(sumit)  ---------->
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container register-form">
+    <div class="form">
+      <div class="note">
+        <p>Place Order</p>
+      </div>
+
+      <div class="form-content">
+       <h6>
+            <center>You are ordering - {{product.englishname}} | {{product.hindiname}} </center><br>
+            <p class="card-title text-center">  {{ product.quantity}} costing {{ product.price}} ₹ </p>
+       </h6> <br>
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-group">
+                {% render_field form1.customername required="true" class="form-control" placeholder="Your Name" %}
+              </div>
+              <div class="form-group">
+                {% render_field form1.address required="true" class="form-control" placeholder="Full Address" %}
+              </div>
+
+
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="form-group">
+                {% render_field form1.mobile required="true" class="form-control" placeholder="Mobile Number" %}
+              </div>
+
+          </div>
+        </div><br>
+       <center> <button type="submit" class="btnSubmit">Order Now</button></center>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<br><br><br><br>
+{% include "bazaar/footer.html" %}
+
