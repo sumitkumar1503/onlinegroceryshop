@@ -3,7 +3,7 @@
 ---
 ## SCREENSHOTS
 ### Home Page
-![homepage snap](https://github.com/sumitkumar1503/onlinegroceryshop/blob/master/static/screenshots/home.jpg?raw=true)
+![homepage snap](https://github.com/sumitkumar1503/onlinegroceryshop/blob/master/static/screenshots/home.JPG?raw=true)
 ### Products
 ![dashboard snap](https://github.com/sumitkumar1503/onlinegroceryshop/blob/master/static/screenshots/admin_dark.png?raw=true)
 ### Admin Dashboard
