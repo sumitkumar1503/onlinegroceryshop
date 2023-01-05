@@ -25,14 +25,11 @@
 ---
 ## FUNCTIONS
 ## Customer
-- customer will signup and login into system
-- customer can make request for service of their vehicle by providing details (vehicle number, model, problem description etc.)
-- After Request approved by admin, customer can check cost, status of service
-- customer can delete request (Enquiry) if customer change their mind or not approved by admin (ONLY PENDING REQUEST CAN BE DELETED )
-- customer can check status of Request(Enquiry) that is Pending, Approved, Repairing, Repairing Done, Released
-- customer can check invoice details or repaired vehicles
-- customer can send feedback to admin
-- customer can see/edit their profile
+- Customer need not to signup and login into system
+- Just open website and browse the product that he/she wants to order
+- Click on order and fill the address/contact details
+- Customer can browse the product category wise
+
 ---
 
 ### Admin
@@ -41,21 +38,17 @@
 py manage.py createsuperuser
 ```
 - Give username, email, password and your admin account will be created.
-- After login , admin can see how many customer, mechanic, recent service orders on dashboard
-- Admin can see/add/update/delete customers
-- Admin can see each customer invoice (if two request made by same customer it will show total sum of both request)
-- Admin can see/add/update/delete mechanics
-- Admin can approve(hire) mechanics (requested by mechanic) based on their skills
-- Admin can see/update mechanic salary
-- Admin can see/update/delete request/enquiry for service sent by customer
-- Admin can also make request for service (suppose customer directly reached to service center/office)
-- Admin can approve request for service made by customer and assign to mechanic for repairing and will provide cost according to problem description
-- Admin can see all service cost of request (both approved and pending)
-- Admin can see feedbacks sent by customer/mechanic
+- After login , admin can view how many Prodct, Ctegory, order amount received on dashboard
+- Admin can also view how many order received on dashboard
+- Admin can view each order details with their customer location and contact number
+- Admin can view/add/update/delete Product
+- Admin can view/add/update/delete Category
+- While adding category and product admin can provide second language and image.
+
+
 ---
 ### Other Features
-- we can change theme of website day(white) and night(black)
-- if customer is deleted by admin then their request(Enquiry) will be deleted automatically
+- if category/product is deleted by admin then their respective order details will be deleted automatically
 
 ## HOW TO RUN THIS PROJECT
 - Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
@@ -75,20 +68,6 @@ py manage.py runserver
 ```
 http://127.0.0.1:8000/
 ```
-
-## CHANGES REQUIRED FOR CONTACT US PAGE
-- In settins.py file, You have to give your email and password
-```
-EMAIL_HOST_USER = 'youremail@gmail.com'
-EMAIL_HOST_PASSWORD = 'your email password'
-EMAIL_RECEIVING_USER = 'youremail@gmail.com'
-```
-- Login to gmail through host email id in your browser and open following link and turn it ON
-```
-https://myaccount.google.com/lesssecureapps
-```
-## Drawbacks/LoopHoles
-- When customer/mechanic edit their profile then he/she must login again because their username/password is updated in db.
 
 ## Disclaimer
 This project is developed for demo purpose and it's not supposed to be used in real application.
